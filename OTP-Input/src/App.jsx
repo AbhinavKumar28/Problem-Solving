@@ -2,154 +2,132 @@ import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import {useBackspaceKeyDown} from "./backspace.jsx"
+// import {useBackspaceKeyDown} from "./backspace.jsx"
 function App() {
-  let refs = {
-    "1": useRef(),
-    "2": useRef(),
-    "3": useRef(),
-    "4": useRef(),
-    "5": useRef(),
-    "6": useRef()
-  }
-  
-  const [inputOne, setInputOne] = useState("");
-  const [inputTwo, setInputTwo] = useState("");
-  const [inputThree, setInputThree] = useState("");
-  const [inputFour, setInputFour] = useState("");
-  const [inputFive, setInputFive] = useState("");
-  const [inputSix, setInputSix] = useState("");
-  const [cur, setCur] = useState("1");
-  const handleBackspacePress = () => {
-    console.log('Backspace key pressed globally!');
-    if (cur==="1") {
-      setCur("6")
-      console.log("6")
-      refs["6"].current.focus()
-      setInputSix("");
-    } else if (cur!=="1"){
-      let prev= (Number(cur)-1).toString()
-      setCur(prev)
-      console.log(prev)
-      refs[prev].current.focus()
-      if (prev==="1"){
-        setInputOne("");
-        // refs["2"].current.focus();
-        // setCur("2");
-      }else if (prev==="2"){
-        setInputTwo("");
-        // refs["3"].current.focus();
-        // setCur("3");
-      }else if (prev==="3"){
-        setInputThree("");
-        // refs["4"].current.focus();
-        // setCur("4");
-      }else if (prev==="4"){
-        setInputFour("");
-        // refs["5"].current.focus();
-        // setCur("5");
-      }else if (prev==="5"){
-        setInputFive("");
-        // refs["6"].current.focus();
-        // setCur("6");
-      }else if (prev==="6"){
-        setInputSix("");
-        // refs[""].current.focus();
-        // setCur("2");
-        // enter logic.
-      }
-    }
-  };
-  const handleLeftArrowPress = () => {
-    console.log('Left Arrow key pressed globally!');
-    if (cur!=="1"){
-      let prev= (Number(cur)-1).toString()
-      setCur(prev)
-      console.log(prev)
-      refs[prev].current.focus()
-    } else if (cur === "1"){
-      setCur("6")
-      console.log("6")
-      refs["6"].current.focus()
-    }
-  };
-  const handleRightArrowPress = () => {
-    console.log('Right Arrow key pressed globally!');
-    if (cur==="6"){
-      setCur("1")
-      console.log("1")
-      refs["1"].current.focus()
-    } else {
-      let prev= (Number(cur)+1).toString()
-      setCur(prev)
-      console.log(prev)
-      refs[prev].current.focus()
-    }
-  };
-  useBackspaceKeyDown(handleBackspacePress, handleLeftArrowPress, handleRightArrowPress);
-
-  function InputOne(FirstInput){
-    if (FirstInput.length>1){
-      document.getElementById("successPopup").textContent="Only one digit per input box allowed"
+  let refs1= useRef(Array(6).fill(""));
+  let suc = useRef();
+  // const [flag, setFlag] = useState(0);
+  const [input1, setInput1] = useState(Array(6).fill(""));
+  // const cur = useRef(6);
+  function showMessage(){
+      suc.current.textContent="Only one digit per input box allowed"
       setTimeout(()=>{
-        document.getElementById("successPopup").textContent=""
+        suc.current.textContent=""
       },5000)
+  }
+  const handleBackspacePress = (index) => {
+    console.log('Backspace key pressed globally!');
+    // if (flag!==0){
+    //   setFlag(flag-1)
+    // }
+    if (index===0){
+        // cur.current=(0)
+        // console.log(cur)
+        // refs1.current[0].focus()
+        // let prev= index
+      // console.log(prev)
+
+        const newinput = [...input1]
+        newinput[index]=""
+        console.log(index)
+        setInput1(newinput)
+
+        // refs1.current[prev-1].focus()
+    
+      }else if (index<6){
+      let prev= index-1
+      // console.log(prev)
+
+        const newinput = [...input1]
+        newinput[index]=""
+        console.log(index)
+        setInput1(newinput)
+
+        refs1.current[prev].focus()
+      }
+        
+    
+  };
+  const handleLeftArrowPress = (index) => {
+    // console.log('Left Arrow key pressed globally!');
+    console.log("fired hla")
+    if (index>0){
+      let prev= (index-1)
+      // cur.current=(prev)
+      // console.log(prev)
+      refs1.current[prev].focus()
     }
-    if (!isNaN(+FirstInput)) {
-      if (FirstInput.length===1 && cur==="1"){
-        setInputOne(FirstInput);
-        refs["2"].current.focus();
-        setCur("2");
-      }else if (FirstInput.length===1 && cur==="2"){
-        setInputTwo(FirstInput);
-        refs["3"].current.focus();
-        setCur("3");
-      }else if (FirstInput.length===1 && cur==="3"){
-        setInputThree(FirstInput);
-        refs["4"].current.focus();
-        setCur("4");
-      }else if (FirstInput.length===1 && cur==="4"){
-        setInputFour(FirstInput);
-        refs["5"].current.focus();
-        setCur("5");
-      }else if (FirstInput.length===1 && cur==="5"){
-        setInputFive(FirstInput);
-        refs["6"].current.focus();
-        setCur("6");
-      }else if (FirstInput.length===1 && cur==="6"){
-        setInputSix(FirstInput);
-        // refs[""].current.focus();
-        setCur("1");
-        refs["1"].current.focus();
-        // enter logic.
+  };
+  const handleRightArrowPress = (index) => {
+    // console.log('Right Arrow key pressed globally!');
+    console.log("fired hra")
+    if (index<5){
+      let prev= (index+1)
+      // index=(prev)
+      // console.log(prev)
+      refs1.current[prev].focus()
+    }
+  };
+  const handleKeyDown = (event,index) => {
+      // const isNumberRegex = /^[0-9]$/.test(event.key);
+      // event.preventDefault()
+      console.log("fired hkd")
+      if (event.keyCode === 46 || event.keyCode === 8) {
+        handleBackspacePress(index);
+      }else if (event.keyCode === 37) {
+        handleLeftArrowPress(index);
+      }else if (event.keyCode === 39) {
+        handleRightArrowPress(index);
       }
+    };
+  // useBackspaceKeyDown(, , handleRightArrowPress, InputOne, flag);
+  function ifNumber(FirstInput,index){
+    // if (index===6){
+    //   const newinput = [...input1]
+    //     newinput[0]=FirstInput
+    //     setInput1(newinput);
+    //     // setInputOne();
+    //     setFlag(flag+1)
+    //     // console.log(refs1.cur.currentrent)
+    //     refs1.current[1].focus();
+    //     // console.log("0 or 6")
+    //     cur.current=(1);
+       console.log("fired in") 
+    if(index===5){
+      const newinput = [...input1]
+        newinput[5]=FirstInput
+        setInput1(newinput);;
+        // setFlag(flag+1)
+        // refs[""].current.focus();
+        // cur.current=(6);
+        // refs1.current[5].blur();
+    }else {
+        // setFlag(flag+1)
+        const newinput = [...input1]
+        newinput[index]=FirstInput
+        setInput1(newinput);;
+        refs1.current[index+1].focus();
+    }
+  }
+  function ifNotNumber(index){
+        // setInputOne("");
+
+       console.log("fired inn")
+        const newinput = [...input1]
+        newinput[index]=""
+        setInput1(newinput);
+  }
+  function InputOne(FirstInput,index){
+
+       console.log("fired io")
+    if (FirstInput.length>1){
+    
+    showMessage(FirstInput);
+    
+    }else if (!isNaN(+FirstInput)) {
+      ifNumber(FirstInput,index)
     } else {
-      if (FirstInput.length===1 && cur==="1"){
-        setInputOne("");
-        // refs["2"].current.focus();
-        // setCur("2");
-      }else if (FirstInput.length===1 && cur==="2"){
-        setInputTwo("");
-        // refs["3"].current.focus();
-        // setCur("3");
-      }else if (FirstInput.length===1 && cur==="3"){
-        setInputThree("");
-        // refs["4"].current.focus();
-        // setCur("4");
-      }else if (FirstInput.length===1 && cur==="4"){
-        setInputFour("");
-        // refs["5"].current.focus();
-        // setCur("5");
-      }else if (FirstInput.length===1 && cur==="5"){
-        setInputFive("");
-        // refs["6"].current.focus();
-        // setCur("6");
-      }else if (FirstInput.length===1 && cur==="6"){
-        setInputSix("");
-        // refs[""].current.focus();
-        // setCur("2");
-        // enter logic.
-      }
+      ifNotNumber(index)
     }
   }
   function OTPSubmitHandler(){}
@@ -166,15 +144,12 @@ function App() {
       <h1>Vite + React</h1>
       <div className="card">
         <form action="" method="post">
-          <input type="text" id="one" ref={refs["1"]} value={inputOne} onChange={(e) => InputOne(e.target.value)} name='one' style={{marginRight: '25px', height: "50px", width: "40px"}}></input>
-          <input type="text" id='two' ref={refs["2"]} value={inputTwo} onChange={(e) => InputOne(e.target.value)} name='two' style={{marginRight: '25px', height: "50px", width: "40px"}}></input>
-          <input type="text" id='three' ref={refs["3"]} value={inputThree} onChange={(e) => InputOne(e.target.value)} name='three' style={{marginRight: '25px', height: "50px", width: "40px"}}></input>
-          <input type="text" id='four' ref={refs["4"]} value={inputFour} onChange={(e) => InputOne(e.target.value)} name='four' style={{marginRight: '25px', height: "50px", width: "40px"}}></input>
-          <input type="text" id='five' ref={refs["5"]} value={inputFive} onChange={(e) => InputOne(e.target.value)} name='five' style={{marginRight: '25px', height: "50px", width: "40px"}}></input>
-          <input type="text" id='six' ref={refs["6"]} value={inputSix} onChange={(e) => InputOne(e.target.value)} name='six' style={{marginRight: '25px', height: "50px", width: "40px"}}></input>
+          {input1.map((ini,index)=>{
+            return <input type="text" key={index} id={index} onKeyDown={(e)=>handleKeyDown(e,index)} ref={(element)=>{refs1.current[index]=element}} value={ini} onChange={(e) => InputOne(e.target.value,index)} name={index} style={{marginRight: '25px', height: "50px", width: "40px"}}></input>
+          })}
           <button style={{margin: 'auto',marginTop:"25px",display: "block"}} onSubmit={OTPSubmitHandler}>Submit</button>
         </form>
-        <p id='successPopup'></p>
+        <p id='successPopup' ref={suc}></p>
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
