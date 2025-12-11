@@ -2,19 +2,21 @@ import { useState, useRef } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { useEffect } from 'react'
 // import {useBackspaceKeyDown} from "./backspace.jsx"
 function App() {
   let refs1= useRef(Array(6).fill(""));
   let suc = useRef();
   // const [flag, setFlag] = useState(0);
   const [input1, setInput1] = useState(Array(6).fill(""));
-  // const cur = useRef(6);
+  const flag = useRef(0);
   function showMessage(){
       suc.current.textContent="Only one digit per input box allowed"
       setTimeout(()=>{
         suc.current.textContent=""
       },5000)
   }
+
   const handleBackspacePress = (index) => {
     console.log('Backspace key pressed globally!');
     // if (flag!==0){
@@ -68,15 +70,19 @@ function App() {
       refs1.current[prev].focus()
     }
   };
+
   const handleKeyDown = (event,index) => {
       // const isNumberRegex = /^[0-9]$/.test(event.key);
       // event.preventDefault()
       console.log("fired hkd")
       if (event.keyCode === 46 || event.keyCode === 8) {
+        event.preventDefault()
         handleBackspacePress(index);
       }else if (event.keyCode === 37) {
+        event.preventDefault()
         handleLeftArrowPress(index);
       }else if (event.keyCode === 39) {
+        event.preventDefault()
         handleRightArrowPress(index);
       }
     };
@@ -130,7 +136,19 @@ function App() {
       ifNotNumber(index)
     }
   }
-  function OTPSubmitHandler(){}
+
+  useEffect(() => {
+    // if key is a number
+    document.addEventListener('keydown', (event)=>{
+      const key = event.key;      
+      const isNumber = /^\d$/.test(key);
+
+            if (isNumber) {
+                
+      InputOne((refs1.current[flag].value+event.key),flag);
+            }
+  })},[]);
+
   return (
     <>
       <div>
