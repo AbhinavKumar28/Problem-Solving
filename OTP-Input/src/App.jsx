@@ -33,7 +33,7 @@ function App() {
         newinput[index]=""
         console.log(index)
         setInput1(newinput)
-
+      // flag.current=0
         // refs1.current[prev-1].focus()
     
       }else if (index<6){
@@ -46,6 +46,7 @@ function App() {
         setInput1(newinput)
 
         refs1.current[prev].focus()
+        // flag.current=prev
       }
         
     
@@ -58,6 +59,7 @@ function App() {
       // cur.current=(prev)
       // console.log(prev)
       refs1.current[prev].focus()
+      // flag.current=prev
     }
   };
   const handleRightArrowPress = (index) => {
@@ -68,6 +70,7 @@ function App() {
       // index=(prev)
       // console.log(prev)
       refs1.current[prev].focus()
+      // flag.current=prev
     }
   };
 
@@ -113,6 +116,7 @@ function App() {
         newinput[index]=FirstInput
         setInput1(newinput);;
         refs1.current[index+1].focus();
+        // flag.current=index+1
     }
   }
   function ifNotNumber(index){
@@ -138,17 +142,22 @@ function App() {
   }
 
   useEffect(() => {
-    // if key is a number
-    document.addEventListener('keydown', (event)=>{
-      const key = event.key;      
-      const isNumber = /^\d$/.test(key);
-
-            if (isNumber) {
-                
-      InputOne((refs1.current[flag].value+event.key),flag);
-            }
-  })},[]);
-
+    refs1.current[0]?.focus()
+  },[]);
+  function handlePaste(e,index){
+    e.preventDefault()
+    const pastedText = e.clipboardData.getData("text");
+    const digits = pastedText.replace(/\D/g, "").slice(0, 6 - index);
+    if (digits.length === 0) return;
+    const newInput = [...input1];
+    for (let i = 0; i < digits.length; i++) {
+      newInput[index + i] = digits[i];
+    }
+    setInput1(newInput);
+    const nextFocus = Math.min(index + digits.length, 5);
+    refs1.current[nextFocus]?.focus();
+  };
+  
   return (
     <>
       <div>
@@ -163,9 +172,9 @@ function App() {
       <div className="card">
         <form action="" method="post">
           {input1.map((ini,index)=>{
-            return <input type="text" key={index} id={index} onKeyDown={(e)=>handleKeyDown(e,index)} ref={(element)=>{refs1.current[index]=element}} value={ini} onChange={(e) => InputOne(e.target.value,index)} name={index} style={{marginRight: '25px', height: "50px", width: "40px"}}></input>
+            return <input type="text" key={index} id={index} onPaste= {(e)=>{handlePaste(e,index)}} onKeyDown={(e)=>handleKeyDown(e,index)} ref={(element)=>{refs1.current[index]=element}} value={ini} onChange={(e) => InputOne(e.target.value,index)} name={index} style={{marginRight: '25px', height: "50px", width: "40px"}}></input>
           })}
-          <button style={{margin: 'auto',marginTop:"25px",display: "block"}} onSubmit={OTPSubmitHandler}>Submit</button>
+          <button style={{margin: 'auto',marginTop:"25px",display: "block"}}>Submit</button>
         </form>
         <p id='successPopup' ref={suc}></p>
         <p>
