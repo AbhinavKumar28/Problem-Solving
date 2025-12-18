@@ -8,34 +8,34 @@
 </head>
 <body>
     <div class="calculator">
-        <input class="mainInput" type="text">
+        <input class="mainInput" id="mainInput" type="text" placeholder="0">
         <div>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
-            <button>/</button>
+            <button id="num7" onclick="onClickNum(7)">7</button>
+            <button id="num8" onclick="onClickNum(8)">8</button>
+            <button id="num9" onclick="onClickNum(9)">9</button>
+            <button onclick="onClickOp(`/`)">/</button>
         </div>
         <div>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
-            <button>*</button>
+            <button id="num4" onclick="onClickNum(4)">4</button>
+            <button id="num5" onclick="onClickNum(5)">5</button>
+            <button id="num6" onclick="onClickNum(6)">6</button>
+            <button onclick="onClickOp(`*`)">*</button>
         </div>
         <div>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
-            <button>+</button>
+            <button id="num1" onclick="onClickNum(1)">1</button>
+            <button id="num2" onclick="onClickNum(2)">2</button>
+            <button id="num3" onclick="onClickNum(3)">3</button>
+            <button onclick="onClickOp(`+`)">+</button>
         </div>
         <div>
-            <button>0</button>
-            <button>.</button>
-            <button>+/-</button>
-            <button>-</button>
+            <button id="num0" onclick="onClickNum(0)">0</button>
+            <button onclick="onClickDot()">.</button>
+            <button onclick="onClickSign()">+/-</button>
+            <button onclick="onClickOp(`-`)">-</button>
         </div>
         <div>
             <button class="lastButtons">=</button>
-            <button class="lastButtons">clear</button>
+            <button class="lastButtons" onclick="onClickClear()">clear</button>
         </div>
     </div>
     <script src="script.js"></script>

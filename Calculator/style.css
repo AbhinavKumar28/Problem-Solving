@@ -11,6 +11,8 @@ button {
 }
 .mainInput{
     width: 280px;
+    direction: rtl;
+    text-align: right;
 }
 .lastButtons{
     width: 125px;
