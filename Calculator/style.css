@@ -1,0 +1,17 @@
+.calculator {
+    padding: 20px;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+}
+button {
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
+.mainInput{
+    width: 280px;
+}
+.lastButtons{
+    width: 125px;
+}
