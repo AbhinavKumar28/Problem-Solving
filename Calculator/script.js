@@ -12,13 +12,13 @@ const division = (num1, num2) => {
 }
 const operate = (operator, num1,num2)=>{
     if (operator==="+"){
-        addition(num1,num2)
+        return addition(num1,num2)
     }else if (operator === "-"){
-        subtraction(num1,num2)
+        return subtraction(num1,num2)
     }else if(operator === "*"){
-        multiplication(num1,num2)
+        return multiplication(num1,num2)
     }else if (operator === "/"){
-        division(num1,num2)
+        return division(num1,num2)
     }else {
         console.log("Invalid operator")
     }
@@ -27,7 +27,9 @@ let a = ""
 let b= ""
 let op=""
 let flag =0
+let resflag=0
 let sign = "+"
+let result=0
 const mainInputElement = document.getElementById("mainInput")
 const onClickNum=(num)=>{
     if (flag===0){
@@ -39,7 +41,11 @@ const onClickNum=(num)=>{
     }
 }
 const onClickOp=(oper)=>{
-    if (a!==""){
+    resflag=0
+    if (b!==""){
+        onClickEqual()
+        op=oper
+    }else if (a!==""){
         op=oper
         flag=1
         mainInputElement.value=""
@@ -51,6 +57,9 @@ const onClickDot = ()=>{
         if (a.includes(".")){
             return
         }else {
+            if (a===""){
+                a="0"
+            }
             a=a+"."
             mainInputElement.value=a
         }
@@ -58,23 +67,29 @@ const onClickDot = ()=>{
         if (b.includes(".")){
             return
         }else {
+            if (b===""){
+                b="0"
+            }
             b=b+"."
             mainInputElement.value=b
         }
     }
-}
+}//keyboard backspace not working.
 const onClickClear=()=>{
     a=""
     b=""
     op=""
     flag=0
     mainInputElement.value=""
+    resflag=0
+    sign="+"
 }
 const onClickSign=()=>{
     if (sign==="+"){
         sign="-"
         if (flag===0){
             a="-"+a
+            console.log("hi")
             mainInputElement.value=a
         }else {
             b="-"+b
@@ -90,6 +105,27 @@ const onClickSign=()=>{
             let newstring=b.slice(1)
             b=newstring
             mainInputElement.value=b
+        }
+    }
+}
+const onClickEqual=()=>{
+    resflag=1
+    if ((a==="")||(b==="")){
+        return
+    }else{
+        if ((a==="-")||(b==="-")){
+            return
+        }else {
+            let numone=Number(a)
+            let numtwo=Number(b)
+            console.log(numone,numtwo)
+            if ((numtwo===0)&&(op==="/")){
+                return
+            }
+            result=operate(op,numone,numtwo)
+            mainInputElement.value=result
+            a=result.toString()
+            b=""
         }
     }
 }

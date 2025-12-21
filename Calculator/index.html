@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="calculator">
-        <input class="mainInput" id="mainInput" type="text" placeholder="0">
+        <input class="mainInput" step="any" id="mainInput" type="text" placeholder="0">
         <div>
             <button id="num7" onclick="onClickNum(7)">7</button>
             <button id="num8" onclick="onClickNum(8)">8</button>
@@ -34,7 +34,7 @@
             <button onclick="onClickOp(`-`)">-</button>
         </div>
         <div>
-            <button class="lastButtons">=</button>
+            <button onclick="onClickEqual()" class="lastButtons">=</button>
             <button class="lastButtons" onclick="onClickClear()">clear</button>
         </div>
     </div>
