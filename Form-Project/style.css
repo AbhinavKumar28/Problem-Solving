@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Norse';
+    src: url('fonts/Norse-Bold.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
 .container{
     display: flex;
     flex-direction: row;
@@ -36,11 +42,18 @@ img{
     background-color: rgb(231, 228, 228);
 }
 .text-section{
-    font-weight: bolder;
+    font-weight: bold;
     margin: 0px 30px 15px;
+    /* font-family: "Norse"; */
+}
+.logo-text{
+    font-family: "Norse";
+    color: white;
+    font-size: 90px;
+    margin-top: 10px;
 }
 .anothertextsection{
-    font-weight: bolder;
+    font-weight: bold;
     margin: 0px 30px 25px;
 }
 .formi{
@@ -56,8 +69,21 @@ input:focus{
     border: blue;
     box-shadow: 5px 5px 10px #888888; 
 }
+label{
+    font-size: 10px;
+}
+.password-input:invalid{
+    border: 1px solid red;
+}
+.gender{
+    font-size: 10px;
+    margin-top: 3.5px;
+}
 input{
     width: 150px;
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 20px;
 }
 .inputbunch{
     display: flex;
@@ -74,4 +100,11 @@ p{
 }
 .mb{
     margin-bottom: 15px;
+}
+.radio-btn{
+    width: 8px;
+    height: 10px;
+}
+.radio-btn:focus{
+    border:1px solid blue;
 }
