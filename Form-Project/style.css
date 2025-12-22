@@ -1,0 +1,77 @@
+.container{
+    display: flex;
+    flex-direction: row;
+}
+body{
+    margin: 0px 150px 0px;
+}
+.img-section{
+    width: 75%;
+    height: 100vh;
+    background-image: url("halie-west-25xggax4bSA-unsplash.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+img{
+    height: 100px;
+}
+.background-text{
+    margin-top: auto;
+    color: white;
+    text-align: center;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 40px; */
+    background-color: rgb(231, 228, 228);
+}
+.text-section{
+    font-weight: bolder;
+    margin: 0px 30px 15px;
+}
+.anothertextsection{
+    font-weight: bolder;
+    margin: 0px 30px 25px;
+}
+.formi{
+    background-color: white;
+    padding: 10px 30px 10px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+}
+input:focus{
+    border: blue;
+    box-shadow: 5px 5px 10px #888888; 
+}
+input{
+    width: 150px;
+}
+.inputbunch{
+    display: flex;
+    gap: 18px;
+}
+button{
+    width: 135px;
+    margin-left: 30px;
+    margin-top: 22px;
+    height: 30px;
+}
+p{
+    margin-left: 30px;
+}
+.mb{
+    margin-bottom: 15px;
+}
