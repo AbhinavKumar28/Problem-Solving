@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -15,9 +15,11 @@ function App() {
 //   const [count, setCount] = useState(0)
     const formelem=useRef()
     // const formelem=document.getElementById("myform")
-    if (!formelem.current.checkValidity()){
-
-    }
+    useEffect(()=>{if (!formelem.current.checkValidity()){
+        if (!(formelem.current.password.value===formelem.current.confirmpassword.value)){
+            inputdata[4].errormessage="Password should be same"
+        }
+    }},)
   return (
     
     <div className="container">
