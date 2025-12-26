@@ -1,0 +1,180 @@
+/* :root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+} */
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+@font-face {
+    font-family: 'Norse';
+    src: url('fonts/Norse-Bold.otf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+}
+body{
+    margin: 0px 150px 0px;
+}
+.img-section{
+    width: 75%;
+    height: 100vh;
+    background-image: url("assets/halie-west-25xggax4bSA-unsplash.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+.logo{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+img{
+    height: 100px;
+}
+.background-text{
+    margin-top: auto;
+    color: white;
+    text-align: center;
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* padding: 40px; */
+    background-color: rgb(231, 228, 228);
+}
+.text-section{
+    font-weight: bold;
+    margin: 0px 30px 15px;
+    /* font-family: "Norse"; */
+}
+.logo-text{
+    font-family: "Norse";
+    color: white;
+    font-size: 90px;
+    margin-top: 10px;
+}
+.anothertextsection{
+    font-weight: bold;
+    margin: 0px 30px 25px;
+}
+.formi{
+    background-color: white;
+    padding: 10px 30px 10px;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+}
+input:focus{
+    border: blue;
+    box-shadow: 5px 5px 10px #888888; 
+}
+label{
+    font-size: 10px;
+}
+.password-input:invalid{
+    border: 1px solid red;
+}
+.gender{
+    font-size: 10px;
+    margin-top: 3.5px;
+}
+input{
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 4px;
+    height: 20px;
+}
+.inputbunch{
+    display: flex;
+    gap: 18px;
+}
+button{
+    width: 155px;
+    margin-left: 30px;
+    margin-top: 22px;
+    height: 40px;
+    color: white;
+}
+p{
+    margin-left: 30px;
+}
+.mb{
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+.radio-btn{
+    width: 8px;
+    height: 10px;
+}
+.radio-btn:focus{
+    border:1px solid blue;
+}
