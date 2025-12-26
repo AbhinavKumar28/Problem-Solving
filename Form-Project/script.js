@@ -14,4 +14,4 @@ button.addEventListener('mouseenter', () => {
 } else {
     console.log('Form is invalid, browser showed messages');
   }
-});
+});//grid - creating a grid console
