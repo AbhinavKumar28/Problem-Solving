@@ -1,8 +1,74 @@
 .container {
   display: grid; 
-  grid-template-columns: 50px 50px;
-  grid-template-rows: 50px 50px;
-  grid-auto-rows: 50px;
+  grid-template-columns: 1fr 5fr;
+  /* grid-template-rows: 50px 50px; */
+  /* grid-auto-rows: 50px;
   grid-auto-flow: column;
-  grid-auto-columns: 50px;
+  grid-auto-columns: 50px; */
+}
+.body{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+.sidebar img{
+  filter: brightness(0) invert(1);
+  height: 20px;
+
+}
+.sidebar{
+  background-color: aqua;
+  color: white;
+}
+.dashboard img{
+  height: 40px;
+  width: 40px;
+}
+.dashboard span{
+  font-size: 27px;
+}
+.header {
+  background-color: white;
+}
+.header img{
+  height: 24px;
+  margin-left: 20px;
+}
+.header .account-img{
+  height: 40px;
+}
+.search-bar{
+  width: 50%;
+  background-color: gray;
+  height: 20px;
+  display: inline-block;
+  margin-right: 70px;
+  border: 1px;
+  border-radius: 15px;
+  padding-bottom: 5px;
+}
+.mrg{
+  margin-left: 20px;
+}
+.header-greeting{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  /* padding-bottom: 50px; */
+}
+.hi{
+  width: 69px;
+}
+.head{
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
+  padding: 25px;
+}
+.hea{
+  padding-left: 25px;
+}
+button{
+  width: 80px;
+  height: 35px;
+  border-radius: 30px;
+  margin-left: 30px;
 }
