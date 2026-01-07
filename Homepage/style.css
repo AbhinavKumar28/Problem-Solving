@@ -1,19 +1,60 @@
-@import url('fonts.googleapis.com');
+@import url('https://fonts.googleapis.com');
 .slant-background {
   height: 70vh; 
   background: linear-gradient(170deg, rgb(65,143,175) 65%, #ffffff 65%);                
   color: white;
   padding: 30px;
 }
+*{
+  box-sizing: border-box;
+}
 body{
   margin: 0px;
   font-family: "Playfair Display", "Roboto";
 }
+header h2{
+    font-size: 40px;
+}
+.about-mid{
+  display: none;
+}
 .abt-txt{
   font-size: 30px;
 }
+.image {
+    z-index: 1;
+    aspect-ratio: 1 / 1;
+    min-width: 200px;
+    max-width: 500px;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.about-mid::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #1190B1;
+  transform: skewY(-10deg);
+  transform-origin: left;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.35);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 .heading{
   font-size: 30px;
+}
+.about-me {
+    background-color: white;
+    padding: 20px;
+    max-width: 480px;
+    min-width: 480px;
+    min-height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .ash-bkg-img{
   background-image: url(me.webp);
@@ -23,7 +64,7 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: end;
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
 }
 .screenshot{
   height: 90px;
@@ -31,6 +72,23 @@ body{
   text-align: center;
   padding-top: 20px;
   font-size: 30px;
+}
+.imigi {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.caption {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    color: white;
+    text-align: center;
+    font-size: 60px;
+    font-family: 'playfair display', sans-serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);    
 }
 .red{
   background-color: rgb(145, 42, 36);
@@ -68,6 +126,9 @@ footer{
 .icon{
   width: 35px;
   height: auto;
+}
+.about-mid{
+  display: none;
 }
 .padi{
   padding: 15px;
@@ -115,6 +176,7 @@ footer{
 }
 .wrk{
   padding: 30px;
+  margin-top: 90px;
 }
 .wrk-grid{
   display: grid;
@@ -135,10 +197,81 @@ footer{
   .wrk-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .cen{
+    text-align: center;
+    font-size: 22px;
+    /* overflow:visible; */
+  }
+  .mh{
+    color: white;
+    font-size: 30px;
+    display: inline-block;
+    transform: translate(-30%,-105%);
+  }
+  .wrk{
+    margin-top: 50px;
+  }
+  .slant-background{
+    display: none;
+  }
+  .about-mid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 80px;
+}
+  
+    header {
+        position: relative;
+        padding: 80px;
+    }
+    .about-me{
+        bottom: -50px;
+        max-width: 75%;
+        position: absolute;
+    }
+    .caption {
+        width: 50%;
+        right: 10%;
+        top: 80px;
+    }
+    .about-me h2 {
+        text-align: right;
+        margin-right: 5%;
+    }
+    
+    .spacer {
+        float: left;
+        width: 65%;
+        margin-bottom: 50px;
+        height: 160px;
+    }
+    .image {
+        position: static;
+    }
+    header::after {
+        content: "";
+        width: 70%;
+    }
+
+  .imig{
+    transform: translate(-15%,-15%);
+  }
+  .about{
+    display: none;
+  }
 }
 
 @media (max-width: 600px) {
   .wrk-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-mid{
+    display: none;
+  }
+  .about{
+    display: grid;
     grid-template-columns: 1fr;
   }
   .cent{
@@ -164,7 +297,20 @@ footer{
     padding: 0px;
     grid-template-columns: 1fr;
   }
-  .about {
-    grid-template-columns: 1fr;
+  .ash-bkg-img{
+    min-height: 450px;
   }
 }
+body::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 45rem;
+    background-color: var(--platinum-granite);
+    transform-origin: 0;
+    transform: skewY(-10deg);
+    box-shadow: 0rem 0.1rem 1rem var(--shadow-mountain);
+}
+
+
