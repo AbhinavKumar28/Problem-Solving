@@ -15,6 +15,7 @@ body{
 header h2{
     font-size: 40px;
 }
+
 .about-mid{
   display: none;
 }
@@ -78,6 +79,7 @@ header h2{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    box-sizing: border-box;
 }
 
 .caption {
@@ -141,6 +143,11 @@ footer{
   display: flex;
   align-items: center;
   margin-bottom: 10px;
+}
+h2{
+  margin: 0;
+  font-weight: 400;
+
 }
 .scrn {
   display: flex;
@@ -232,9 +239,9 @@ footer{
         position: absolute;
     }
     .caption {
-        width: 50%;
+        width: 70%;
         right: 10%;
-        top: 80px;
+        top: 5px;
     }
     .about-me h2 {
         text-align: right;
@@ -243,7 +250,7 @@ footer{
     
     .spacer {
         float: left;
-        width: 65%;
+        width: 55%;
         margin-bottom: 50px;
         height: 160px;
     }
@@ -254,7 +261,9 @@ footer{
         content: "";
         width: 70%;
     }
-
+    .right-align{
+      margin: 0px;
+    }
   .imig{
     transform: translate(-15%,-15%);
   }
@@ -285,7 +294,10 @@ footer{
     text-align: center;
   }
   .slant-background {
-  height: auto;}
+  height: auto;
+    display: block;
+}
+
   .fot{
     padding: 30px;
     text-align: center;
