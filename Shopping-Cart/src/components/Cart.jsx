@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 // import Card from './Card.jsx';
+import minusIcon from "../assets/minus.svg";
+import plusIcon from "../assets/plus.svg";
 function Cart({
             products,
             setProducts,
@@ -8,6 +10,23 @@ function Cart({
             setCartitems}) {
   const [count, setCount] = useState(0)
   const navigate = useNavigate();
+  const handleMinus = (id) =>{
+    setCartitems((prev)=>{
+      let duplicate = [...prev]
+      if (duplicate[id]>0){
+        duplicate[id]=duplicate[id]-1
+      }
+      return duplicate
+    })
+  }
+  const handlePlus = (id) =>{
+    setCartitems((prev)=>{
+      let duplicate = [...prev]
+      duplicate[id]=duplicate[id]+1  
+      return duplicate
+    })
+  }
+  
   let total = 0;
   return (
     <>
@@ -27,7 +46,13 @@ function Cart({
           total = total+(item * products[index].price)
           return <div key={index} className='cart-heading'>
             <p>{products[index].title}</p>
-            <p>{item}</p>
+            <div className='plus-minus'>
+                      <div className='flex-item'><img onClick={(e)=>{handleMinus(index)}} className="card-btn" src={minusIcon} alt="" />
+                      </div>
+                      <p>Qt : {item}</p>
+                      <div className='flex-item'><img onClick={(e)=>{handlePlus(index)}} className="card-btn" src={plusIcon} alt="" />
+                    </div>
+                    </div>
             <p>{item} * {products[index].price}</p>
           </div>
         }

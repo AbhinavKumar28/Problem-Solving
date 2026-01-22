@@ -43,17 +43,26 @@ function Card({
       return duplicate
     })
   }
+  const handleInput = (value) =>{
+    setCartitems((prev)=>{
+      let duplicate = [...prev]
+      duplicate[id]=value
+      return duplicate
+    })
+  }
   const [count, setCount] = useState(0)
   return (
     <>
       <div className='card-items'>
         <p className='card-title'>{title}</p>
-        <img src={image} alt="" className='card-images'/>
+        <div className='flex-item'>
+          <img src={image} alt="" className='card-images'/>
+        </div>
         {(quantity===0)?<button onClick={handleAdd}>Add to Cart</button>:null}
         {(quantity!==0)?<div className='plus-minus'>
           <div className='flex-item'><img onClick={handleMinus} className="card-btn" src={minusIcon} alt="" />
           </div>
-          <p>Qt : {quantity}</p>
+          <p>Qt : <input value={quantity} onChange={(e)=>handleInput(e.target.value)}></input></p>
           <div className='flex-item'><img onClick={handlePlus} className="card-btn" src={plusIcon} alt="" />
         </div>
         </div>:null}
