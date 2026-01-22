@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 import Card from './Card.jsx';
-function Shop() {
-  const [products, setProducts] = useState([])
+function Shop({
+            products,
+            setProducts,
+            cartitems,
+            setCartitems}) {
   const navigate = useNavigate();
   useEffect(() => {
     fetch("https://fakestoreapi.com/products?limit=20")
@@ -20,12 +23,15 @@ function Shop() {
       <h1>Choose the item</h1>
       <div className="home-images">
         {products.map((product)=>{
+          // console.log(product.id)
           return <Card 
           key={product.id} 
-          id={product.id}
+          id={product.id-1}
           title={product.title}
           price={product.price}
           image={product.image}
+          quantity={cartitems[product.id-1]}
+          setCartitems={setCartitems}
           />
         })}
       </div>

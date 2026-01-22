@@ -6,7 +6,8 @@ import Home from './components/Home';
 import Shop from './components/Shop';
 import Cart from './components/Cart';
 function App() {
-  const [count, setCount] = useState(0)
+  const [cartitems, setCartitems] = useState(Array(20).fill(0))
+  const [products, setProducts] = useState([])
   return (
     <>
     <Router>
@@ -22,6 +23,10 @@ function App() {
           path="/shop"
           element={
             <Shop
+            products={products}
+            setProducts={setProducts}
+            cartitems={cartitems}
+            setCartitems={setCartitems}
             />
           }
         />
@@ -29,6 +34,10 @@ function App() {
           path="/cart"
           element={
             <Cart
+            products={products}
+            setProducts={setProducts}
+            cartitems={cartitems}
+            setCartitems={setCartitems}
             />
           }
         />

@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-import Card from './Card.jsx';
-function Cart() {
+// import Card from './Card.jsx';
+function Cart({
+            products,
+            setProducts,
+            cartitems,
+            setCartitems}) {
   const [count, setCount] = useState(0)
   const navigate = useNavigate();
+  let total = 0;
   return (
     <>
       <div className='navbar'>
@@ -17,10 +22,20 @@ function Cart() {
         <p>No.</p>
         <p>Price</p>
       </div>
+      {cartitems.map((item,index)=>{
+        if (item!==0){
+          total = total+(item * products[index].price)
+          return <div key={index} className='cart-heading'>
+            <p>{products[index].title}</p>
+            <p>{item}</p>
+            <p>{item} * {products[index].price}</p>
+          </div>
+        }
+      })}
       <div className='cart-heading'>
         <p>Total</p>
         <p></p>
-        <p>500/-</p>
+        <p>{total}/-</p>
       </div>
     </>
   )
