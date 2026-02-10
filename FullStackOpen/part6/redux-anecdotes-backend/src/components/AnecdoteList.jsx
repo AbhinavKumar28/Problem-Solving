@@ -9,15 +9,16 @@ const AnecdoteList = () => {
   const vote = (id,content) => {
       console.log('vote', id)
       dispatch(giveVote({id}))
-      dispatch(notification(`you voted ${content}`))
+      dispatch(notification(`You voted ${content}`))
     }
-  return <div>{[...anecdotes]
+  return <div className='article'>{[...anecdotes]
     .sort((a, b) => b.votes - a.votes)
     .map(anecdote => (
-        <div key={anecdote.id}>
+        <div className='card' key={anecdote.id}>
           <div>{anecdote.content}</div>
-          <div>
-            has <div>{anecdote.votes}&emsp;
+          <div className='only-display-onhover'>
+            <div>{anecdote.votes}</div>
+            <div className='display-block'>
             <button onClick={() => vote(anecdote.id, anecdote.content)}>vote</button>
             </div>
           </div>

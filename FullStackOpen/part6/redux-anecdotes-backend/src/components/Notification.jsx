@@ -1,15 +1,14 @@
 import { useSelector } from "react-redux"
+import Alert from '@mui/material/Alert';
+import CheckIcon from '@mui/icons-material/Check';
 
-const Notification = () => {
-  const style = {
-    border: 'solid',
-    padding: 10,
-    borderWidth: 1,
-    marginBottom: 10,
-    // display:"none"
-  }
+export default function SimpleAlert() {
   const message = useSelector(state => state.notification)
-  return <div style={style}>{message}</div>
+  return (
+    (message && (<Alert icon={false} 
+  sx={{ justifyContent: 'center', textAlign: 'center' }} severity="success">
+{message}
+    </Alert>)
+  ));
 }
 
-export default Notification

@@ -22,17 +22,17 @@ const AnecdoteForm = () => {
     event.target.anecdote.value = ""
     const newNote = await anecdoteService.createNew(content)
     dispatch(createAnecdote(newNote))
-    dispatch(notification(`you created ${content}`))
+    dispatch(notification(`You created ${content}`))
     // debugger
   }
-  return <div><h2>create new</h2>
+  return <div className="form"><h2>Create New</h2>
       <form onSubmit={
         addAnecdote
       }>
         <div>
           <input name='anecdote'/>
         </div>
-        <button type='submit'>create</button>
+        <button className="btn-add" type='submit'>Add</button>
       </form>
     </div>
 }

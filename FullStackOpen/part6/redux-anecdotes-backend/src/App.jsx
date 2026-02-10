@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div className='center'>
-      <h2>Anecdotes</h2>
+      <h1 className='no-margin'>Anecdotes</h1>
       <Notification />
       <Filter />
       <AnecdoteList />
