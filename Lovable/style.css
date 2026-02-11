@@ -1,0 +1,202 @@
+body{
+    margin: 0px;
+}
+.nav{
+    width: 190px;
+    height: 80px;
+    object-fit: scale-down;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+
+}
+.first-nav{
+    padding-left: 16px;
+}
+.second-nav{
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+}
+.container{
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.first-content:hover{
+    background-color: white;
+}
+.plus{
+    background-color: white
+}
+.main-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("./lovable-logo-icon.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px);
+  z-index: -1;
+}
+.main-container {
+  position: relative;
+  height: calc(95vh - 57px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.div-new{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    width: 50px;
+    height: 35px;
+    border: 0px solid black;
+    border-radius: 20px;
+}
+.new{
+    color: white;
+    margin: 0px;
+    text-align: center;
+    padding: auto;
+    padding-top: auto;
+    padding-bottom: auto;
+}
+.margin-zero{
+    margin: 0px;
+}
+.navbar{
+    display: flex;
+    flex-direction: row;
+    gap: 23px;
+    align-items: center;
+    background-color: white; 
+    /* margin-left: 80px;
+    margin-right: 80px; */
+    /* margin-top: 25px; */
+    padding: 16px;
+}
+.arrow{
+    width: 15px;
+    height: 10px;
+}
+.nav-logo{
+    width: 140px;
+}
+.signup-buttons{
+    margin-left: auto;
+}
+.login{
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 70px;
+    height: 30px;
+    background-color: white;
+}
+.signup{
+    border: solid 1px black;
+    border-radius: 5px;
+    width: 90px;
+    height: 30px;
+    background-color: black;
+    color: white;
+}
+@media (max-height: 600px) {
+  .main-container {
+    height: 543px;
+  }
+}
+.first-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 9px;
+    border: 0px solid black;
+    border-radius: 30px;
+    background: transparent;
+}
+.right{
+    width: 18px;
+    height: 10px;
+}
+.input-area{
+    padding: 20px;
+    background-color: white;
+    border: 0px solid black;
+    border-radius: 30px;
+    width: 605px;
+    height: 105px;
+}
+.input{
+    width: 100%;
+    height: 30%;
+    border:none;
+    resize:none
+}
+textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+button img{
+    width: 30px;
+    height: 30px;
+}
+.plan{
+    width: 60px;
+    height: 35px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 50px;
+
+    /* padding: 8px; */
+}
+.mar{
+    margin-left: auto;
+}
+.rower{
+    display: flex;
+    gap: 6px;
+}
+.rowe{
+    display: flex;
+gap: 8px;
+}
+.pady{
+}
+.svg-plus {
+  background: white;
+  border: none;
+  cursor: pointer;
+  padding: 5.5px;
+  border-radius: 50%;
+
+    /* height: 35px; */
+}
+
+.svg-plus svg, .svg-upload svg {
+  color: black;
+  transition: color 0.3s;
+  /* margin-bottom: 2px; */
+}
+.svg-upload{
+  background-color: rgb(153, 146, 146);
+  border: none;
+  cursor: pointer;
+  padding: 5.5px;
+  border-radius: 50%;
+
+    /* height: 35px; */
+}
+.svg-plus:hover,.svg-upload:hover {
+  background-color: gray;
+}
