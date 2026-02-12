@@ -1,62 +1,132 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lovable</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="container">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="nav-container">
+      <div class="container">
         <div class="navbar">
-            <div class="first-nav">
-                <img class="nav-logo" src="./lovable-logo.png" alt="">
+          <div class="first-nav">
+            <img class="nav-logo cursor-pointer" class="love-logo" src="./lovable-logo.png" alt="" />
+          </div>
+          <div class="second-nav">
+            <div class="sol-dropdown">
+              <span class="onhovergray cursor-pointer">Solutions</span>
+              <div class="drop">
+                <div>
+                  <p class="onhovergray cursor-pointer">Founders</p>
+                  <p class="onhovergray cursor-pointer">Product Managers</p>
+                  <p class="onhovergray cursor-pointer">Designers</p>
+                  <p class="onhovergray cursor-pointer">Marketers</p>
+                  <p class="onhovergray cursor-pointer">Sales</p>
+                </div>
+                <div class="st-line"></div>
+                <div>
+                  <p class="onhovergray cursor-pointer">Prototyping</p>
+                  <p class="onhovergray cursor-pointer">Internal Tools</p>
+                </div>
+              </div>
+              <img class="arrow" src="./down-icon.png" alt="" />
             </div>
-            <div class="second-nav">
-                <div><span>Solutions</span><img class="arrow" src="./down-icon.png" alt=""></div>
-                <div><span>Resources</span><img class="arrow" src="./down-icon.png" alt=""></div>
-                <div>Enterprise</div>
-                <div>Pricing</div>
-                <div>Community</div>
+            <div class="res-dropdown">
+              <span class="onhovergray cursor-pointer">Resources</span>
+              <div class="drop-res">
+                <div>
+                  <p class="onhovergray">Discover</p>
+                  <p class="onhovergray">Blog</p>
+                  <p class="onhovergray">Partners</p>
+                </div>
+              </div>
+              <img class="arrow" src="./down-icon.png" alt="" />
             </div>
-            <div class="signup-buttons">
-                <button class="login">Log in</button>
-                <button class="signup">Get started</button>
-            </div>
+            <div class="onhovergray cursor-pointer">Enterprise</div>
+            <div class="onhovergray cursor-pointer">Pricing</div>
+            <div class="onhovergray cursor-pointer">Community</div>
+          </div>
+          <div class="signup-buttons">
+            <button class="login cursor-pointer">Log in</button>
+            <button class="signup cursor-pointer">Get started</button>
+          </div>
         </div>
+      </div>
     </div>
     <div class="main-container">
-        <div class="first-content">
-            <div class="div-new">
-                <h4 class="new">New</h4>
-            </div>
-            <h4 class="margin-zero">Introducing a smarter Lovable</h4>
-            <img class="right" src="./right-arrow.png" alt="">
+      <div class="first-content cursor-pointer">
+        <div class="div-new">
+          <h4 class="new">New</h4>
         </div>
-        <h1>Build something Lovable</h1>
-        <p>Create apps and websites by chatting with AI</p>
-        <div class="input-area">
-            <textarea class="input" placeholder="Ask Lovable to create a web app that..." id=""></textarea>
-            <div class="rower">
-                <button class="svg-plus">
-        
-  <svg xmlns="http://www.w3.org/2000/svg" class="plus-icon" fill="currentColor" viewBox="0 0 24 24" width="24px" height="24px" class="shrink-0 size-5"><path fill="currentColor" d="M11.25 20v-7.25H4a.75.75 0 0 1 0-1.5h7.25V4a.75.75 0 0 1 1.5 0v7.25H20a.75.75 0 0 1 0 1.5h-7.25V20a.75.75 0 0 1-1.5 0"></path></svg>
-                    <!-- <img class="plus" src="./plus-icon.png" alt=""> -->
-                </button>
-                <div class="rowe mar">
-                    <div class="pady">
-                    <button class="plan"><span>Plan</span></button>
-                </div>
-                <button class="svg-plus">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24px" height="24px" class="shrink-0 size-5 relative z-10 h-5 w-5"><path fill="currentColor" d="M10.25 20V4a.75.75 0 0 1 1.5 0v16a.75.75 0 0 1-1.5 0m8-2V6a.75.75 0 0 1 1.5 0v12a.75.75 0 0 1-1.5 0m-12-1V7a.75.75 0 0 1 1.5 0v10a.75.75 0 0 1-1.5 0m8-2V9a.75.75 0 0 1 1.5 0v6a.75.75 0 0 1-1.5 0m-12-1v-4a.75.75 0 0 1 1.5 0v4a.75.75 0 0 1-1.5 0"></path></svg>
-                </button>
-                <button class="svg-upload">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="24px" height="24px" class="shrink-0 size-5"><path fill="currentColor" d="M11 19V7.415l-3.293 3.293a1 1 0 1 1-1.414-1.414l5-5 .074-.067a1 1 0 0 1 1.34.067l5 5a1 1 0 1 1-1.414 1.414L13 7.415V19a1 1 0 1 1-2 0"></path></svg>
-                </button>
-                </div>
-                
+        <h4 class="margin-zero">Introducing a smarter Lovable</h4>
+        <!-- <img class="right" src="./right-arrow.png" alt="" /> -->
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" width="19px" height="19px" class="shrink-0 size-4 transition-transform duration-300 group-hover:translate-x-0.5"><path fill="currentColor" d="M13.47 6.47a.75.75 0 0 1 1.06 0l5 5a.75.75 0 0 1 0 1.06l-5 5a.75.75 0 1 1-1.06-1.06l3.72-3.72H5a.75.75 0 0 1 0-1.5h12.19l-3.72-3.72a.75.75 0 0 1 0-1.06"></path></svg>
+      </div>
+      <h1>Build something Lovable</h1>
+      <p class="para">Create apps and websites by chatting with AI</p>
+      <div class="input-area">
+        <textarea
+          class="input"
+          placeholder="Ask Lovable to create a web app that..."
+          id=""
+        ></textarea>
+        <div class="rower">
+          <button class="svg-plus">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="plus-icon"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              width="24px"
+              height="24px"
+              class="shrink-0 size-5"
+            >
+              <path
+                fill="currentColor"
+                d="M11.25 20v-7.25H4a.75.75 0 0 1 0-1.5h7.25V4a.75.75 0 0 1 1.5 0v7.25H20a.75.75 0 0 1 0 1.5h-7.25V20a.75.75 0 0 1-1.5 0"
+              ></path>
+            </svg>
+            <!-- <img class="plus" src="./plus-icon.png" alt=""> -->
+          </button>
+          <div class="rowe mar">
+            <div class="pady">
+              <button class="plan"><span>Plan</span></button>
             </div>
+            <button class="svg-plus">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                width="24px"
+                height="24px"
+                class="shrink-0 size-5 relative z-10 h-5 w-5"
+              >
+                <path
+                  fill="currentColor"
+                  d="M10.25 20V4a.75.75 0 0 1 1.5 0v16a.75.75 0 0 1-1.5 0m8-2V6a.75.75 0 0 1 1.5 0v12a.75.75 0 0 1-1.5 0m-12-1V7a.75.75 0 0 1 1.5 0v10a.75.75 0 0 1-1.5 0m8-2V9a.75.75 0 0 1 1.5 0v6a.75.75 0 0 1-1.5 0m-12-1v-4a.75.75 0 0 1 1.5 0v4a.75.75 0 0 1-1.5 0"
+                ></path>
+              </svg>
+            </button>
+            <button class="svg-upload">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                width="24px"
+                height="24px"
+                class="shrink-0 size-5"
+              >
+                <path
+                  fill="currentColor"
+                  d="M11 19V7.415l-3.293 3.293a1 1 0 1 1-1.414-1.414l5-5 .074-.067a1 1 0 0 1 1.34.067l5 5a1 1 0 1 1-1.414 1.414L13 7.415V19a1 1 0 1 1-2 0"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-</body>
+    <script src="./script.js" defer></script>
+  </body>
 </html>
