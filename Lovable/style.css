@@ -88,7 +88,7 @@ h4 {
   flex-direction: row;
   gap: 23px;
   align-items: center;
-  background-color: white;
+  /* background-color: white; */
   /* margin-left: 80px;
     margin-right: 80px; */
   /* margin-top: 25px; */
@@ -208,7 +208,7 @@ button img {
   color: white;
   border: none;
   border-radius: 50px;
-
+  cursor: pointer;
   font-family: "MyCustomFontNavbar", sans-serif;
   font-weight: 400;
   font-size: .875rem;
@@ -224,14 +224,17 @@ button img {
 .rower {
   display: flex;
   gap: 6px;
-  margin-top: 32px;
+  margin-top: 12px;
 }
 .rowe {
   display: flex;
   gap: 8px;
 }
 .nav-container {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 .sol-dropdown {
   position: relative;
